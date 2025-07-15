@@ -6,25 +6,6 @@ This document describes the high-level architecture of the TravelPassport platfo
 
 ```mermaid
 <!-- ARCHITECTURE_DIAGRAM_PLACEHOLDER -->
-flowchart TD
-  subgraph Cloudflare
-    A["travelpassport-web (Remix Worker)"]
-    B["api-worker (Hono, Drizzle, D1, RPC)"]
-    C["D1 Database"]
-  end
-  D["Mobile App (React Native)"]
-  E["Public REST API (Hono)"]
-  F["Clerk"]
-  G["Stripe"]
-
-  A -- "RPC" --> B
-  B -- "SQL" --> C
-  D -- "HTTPS" --> E
-  E -- "REST" --> B
-  A -- "Auth" --> F
-  D -- "Auth" --> F
-  A -- "Payments" --> G
-  D -- "Payments" --> G
 ```
 
 ## Components
